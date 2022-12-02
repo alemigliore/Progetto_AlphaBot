@@ -52,6 +52,11 @@ class AlphaBot(object):
         GPIO.output(self.IN3, GPIO.LOW)
         GPIO.output(self.IN4, GPIO.HIGH)
 
+    #abbiamo modificato i parametri passati alle funzioni "forward()" e "backward()"
+    #prima si aveva un solo parametro indicante la velocità di entrambi i motori
+    #dopo la modifica abbiamo una variabile per la velocità del motore destro e una per quello sinistro
+    # adattando il loro valore in base all'andamento dell'Alphabot
+
     def forward(self, speedLeft=35, speedRight=30):
         self.PWMA.ChangeDutyCycle(speedLeft)
         self.PWMB.ChangeDutyCycle(speedRight)
